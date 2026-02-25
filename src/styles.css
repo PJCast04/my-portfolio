@@ -1,0 +1,121 @@
+/* ================= RESET ================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ================= ROOT VARIABLES ================= */
+:root {
+  --bg: #0d0d0d;
+  --text: #f2f2f2;
+  --muted: rgba(255, 255, 255, 0.6);
+  --border: rgba(255, 255, 255, 0.08);
+  --hover: rgba(255, 255, 255, 0.8);
+}
+
+/* ================= BASE ================= */
+html,
+body {
+  height: 100%;
+  overflow: hidden; /* lock full page scroll */
+}
+
+body {
+  font-family: 'IBM Plex Sans', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+h1,
+h2,
+h3 {
+  font-weight: 400;
+}
+
+/* ================= OUTER FRAME ================= */
+.app-frame {
+  margin: 40px; /* increased margin */
+  border: 1px solid var(--border);
+  height: calc(100vh - 80px); /* 40px top + 40px bottom */
+  display: flex;
+  flex-direction: column;
+}
+
+/* ================= LAYOUT ================= */
+.layout {
+  display: flex;
+  flex: 1;
+  overflow: hidden; /* prevent children overflow */
+}
+
+/* ================= SIDEBAR ================= */
+app-sidebar {
+  width: 700px;
+  /* border-right: 1px solid var(--border); */
+}
+
+/* ================= CONTENT ================= */
+.content {
+  flex: 1;
+  padding: 120px 140px;
+  overflow-y: auto; /* only right side scrolls */
+  scroll-behavior: smooth;
+}
+
+/* ================= THEMES ================= */
+
+/* DARK */
+[data-theme='dark'] {
+  --bg: #0d0d0d;
+  --text: #f2f2f2;
+  --muted: rgba(255, 255, 255, 0.6);
+  --border: rgba(255, 255, 255, 0.08);
+  --hover: rgba(255, 255, 255, 0.8);
+}
+
+/* LIGHT */
+[data-theme='light'] {
+  --bg: #ffffff;
+  --text: #111111;
+  --muted: rgba(0, 0, 0, 0.6);
+  --border: rgba(0, 0, 0, 0.15);
+  --hover: rgba(0, 0, 0, 0.85);
+}
+
+/* MONO MODE */
+[data-mono='true'] {
+  font-family: 'IBM Plex Mono', monospace;
+}
+
+/* ================= MOBILE ================= */
+@media (max-width: 1024px) {
+
+  html,
+  body {
+    overflow: auto; /* allow natural scroll on mobile */
+  }
+
+  .app-frame {
+    margin: 0;
+    border: none;
+    height: auto;
+  }
+
+  .layout {
+    flex-direction: column;
+  }
+
+  app-sidebar {
+    width: 100%;
+    border-right: none;
+    border-bottom: 1px solid var(--border);
+    padding: 20px;
+  }
+
+  .content {
+    padding: 60px 24px;
+    overflow: visible;
+  }
+}

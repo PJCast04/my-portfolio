@@ -1,0 +1,25 @@
+<div class="theme-toggle">
+
+  <span 
+    [class.active]="currentTheme === 'light'"
+    (click)="setTheme('light')">
+    LIGHT
+  </span>
+
+  <span class="divider">|</span>
+
+  <span 
+    [class.active]="currentTheme === 'dark'"
+    (click)="setTheme('dark')">
+    DARK
+  </span>
+
+  <span class="divider">|</span>
+
+  <span 
+    [class.active]="monoEnabled"
+    (click)="toggleMono()">
+    MONO
+  </span>
+
+</div>
