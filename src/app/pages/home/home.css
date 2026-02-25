@@ -15,8 +15,6 @@
   line-height: 1.7;
   color: var(--muted);
 }
-git config --global user.email "you@example.com"
-  git config --global user.name "Your Name"
 
 /*================MOBILE============= */
 @media (max-width: 768px) {
