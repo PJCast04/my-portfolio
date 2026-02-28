@@ -52,14 +52,14 @@ h3 {
 
 /* ================= SIDEBAR ================= */
 app-sidebar {
-  width: 700px;
+  width: 300px;
   /* border-right: 1px solid var(--border); */
 }
 
 /* ================= CONTENT ================= */
 .content {
   flex: 1;
-  padding: 120px 140px;
+  padding: 80px 100px; /*top/bottom left/right*/
   overflow-y: auto; /* only right side scrolls */
   scroll-behavior: smooth;
 }

@@ -1,0 +1,42 @@
+.projects {
+  display: flex;
+  flex-direction: column;
+}
+
+.project-card {
+  border: 1px solid var(--border-color);
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  transition: 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-4px);
+}
+
+.project-card h3 {
+  margin: 0;
+  font-weight: 500;
+}
+
+.description {
+  margin: 0;
+  opacity: 0.8;
+  line-height: 1.6;
+}
+
+.stack {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.85rem;
+  opacity: 0.7;
+}
+
+.project-card a {
+  text-decoration: none;
+  margin-top: 10px;
+}

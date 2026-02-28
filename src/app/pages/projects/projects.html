@@ -1,1 +1,21 @@
-<p>projects works!</p>
+<section class="projects">
+  <h1>Projects</h1>
+
+  <div
+    class="project-card"
+    *ngFor="let project of projects"
+    (click)="openProject(project.url)"
+  >
+    <h3>{{ project.title }}</h3>
+
+    <p class="description">
+      {{ project.description }}
+    </p>
+
+    <div class="stack">
+      <span *ngFor="let tech of project.stack">
+        {{ tech }}
+      </span>
+    </div>
+  </div>
+</section>
