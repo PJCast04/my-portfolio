@@ -27,11 +27,21 @@ import { Sidebar } from './components/sidebar/sidebar';
     trigger('fadeAnimation', [
       transition('* <=> *', [
         style({ opacity: 0 }),
-        animate('300ms ease-in-out', style({ opacity: 1 }))
+        animate('450ms ease-in-out', style({ opacity: 1 }))
       ])
     ])
   ]
 })
 export class App {
   protected readonly title = signal('joash-portfolio');
+
+  routeKey(outlet: RouterOutlet) {
+  if (!outlet || !outlet.isActivated) return 'initial';
+
+  return (
+    outlet.activatedRouteData?.['anim'] ??
+    outlet.activatedRoute?.snapshot?.routeConfig?.path ??
+    'unknown'
+  );
+}
 }

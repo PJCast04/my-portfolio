@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
 import { ThemeToggle } from '../theme-toggle/theme-toggle';
-import { RouterLink } from '@angular/router';
+import { RouterLink, RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-sidebar',
-  imports: [ThemeToggle, RouterLink],
+  imports: [ThemeToggle, RouterLink, RouterModule],
   templateUrl: './sidebar.html',
   styleUrl: './sidebar.css',
 })

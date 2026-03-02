@@ -1,0 +1,15 @@
+<section class="tech">
+  <h1>Tech Stack</h1>
+
+  <div class="groups">
+    <div class="group" *ngFor="let group of categories">
+      <h2>{{ group.title }}</h2>
+
+      <div class="chips">
+        <span class="chip" *ngFor="let item of group.items">
+          {{ item }}
+        </span>
+      </div>
+    </div>
+  </div>
+</section>

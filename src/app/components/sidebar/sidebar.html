@@ -2,16 +2,19 @@
   <h2>Joash Castanos</h2>
   <p class="position">Developer</p>
 
-  <nav>
-    <a routerLink="">Home</a>
-    <a routerLink="experience">Experience</a>
-    <a routerLink="projects">Projects</a>
-    <a routerLink="certifications">Certifications</a>
-    <a routerLink="contact">Contact</a>
-  </nav>
+ <nav>
+  <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Home</a>
+  <a routerLink="/experience" routerLinkActive="active">Experience</a>
+  <a routerLink="/projects" routerLinkActive="active">Projects</a>
+  <a routerLink="/tech" routerLinkActive="active">Tech Stack</a>
+  <a routerLink="/contact" routerLinkActive="active">Contact</a>
+</nav>
 
   <div class="sidebar-bottom">
     <app-theme-toggle></app-theme-toggle>
+
+    <p class="copyright">
+      © 2026 Joash Castanos. All rights reserved.
+    </p>
   </div>
 </div>
-

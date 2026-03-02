@@ -1,13 +1,21 @@
 .hero {
-  max-width: 720px;
+  padding-right: 120px;
+  width: 100%;
+  max-width: none;
 }
 
-.hero h1 {
+.hero-title {
   font-size: 3rem;
   font-weight: 300;
-  line-height: 1.15;
+  line-height: 1.1;
   letter-spacing: -1px;
   margin-bottom: 40px;
+}
+
+.muted-line {
+  color: var(--muted);
+  font-weight: 300;
+  letter-spacing: 2px;
 }
 
 .hero p {

@@ -3,29 +3,75 @@
   font-size: 30px;
   margin-bottom: 5px;
 }
+
 .position {
   font-size: 0.85rem;
   color: var(--muted);
   margin-bottom: 60px;
 }
+
 nav {
   display: flex;
   flex-direction: column;
   gap: 22px;
+  
 }
+
 nav a {
+   position: relative;
   text-decoration: none;
   color: var(--muted);
   font-size: 0.95rem;
   transition: 0.2s ease;
 }
-nav a:hover {
-  color: var(--hover);
+
+/* base */
+nav a::before {
+  content: '';
+  position: absolute;
+  left: -16px;
+  top: 50%;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--text);
+
+  opacity: 0;
+  transform: translate(-6px, -50%) scale(0.6); /* start slightly left + smaller */
+  transition: opacity 200ms ease, transform 260ms cubic-bezier(.2,.8,.2,1);
 }
+
+nav a.active {
+  color: var(--text);
+}
+
+/* active */
+nav a.active::before {
+  opacity: 1;
+  transform: translate(0, -50%) scale(1.1); /* slide in + pop */
+}
+
 .sidebar-bottom {
   position: absolute;
-  bottom: 80px;   /* match top padding */
-  left: 40px;     /* match side padding */
+  bottom: 40px;
+  /* aligns with sidebar padding */
+  left: 40px;
+  right: 40px;
+  /* keeps width aligned */
+  border-top: 1px solid var(--border);
+  padding-top: 20px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  align-items: center;
+}
+
+.copyright {
+  margin: 0;
+  font-size: 0.7rem;
+  color: var(--muted);
+  align-items: center;
 }
 
 .sidebar {
@@ -43,9 +89,12 @@ nav a:hover {
     align-items: center;
     padding: 20px;
   }
+
   .sidebar-top nav {
-    display: none; /* hide nav for now */
+    display: none;
+    /* hide nav for now */
   }
+
   .sidebar-bottom {
     margin: 0;
     position: static;

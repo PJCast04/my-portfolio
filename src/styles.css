@@ -12,6 +12,8 @@
   --muted: rgba(255, 255, 255, 0.6);
   --border: rgba(255, 255, 255, 0.08);
   --hover: rgba(255, 255, 255, 0.8);
+  --card-bg: rgba(255, 255, 255, 0.03);
+  --card-hover-bg: rgba(255, 255, 255, 0.06);
 }
 
 /* ================= BASE ================= */
@@ -82,6 +84,8 @@ app-sidebar {
   --muted: rgba(0, 0, 0, 0.6);
   --border: rgba(0, 0, 0, 0.15);
   --hover: rgba(0, 0, 0, 0.85);
+  --card-bg: rgba(0, 0, 0, 0.03);
+  --card-hover-bg: rgba(0, 0, 0, 0.06);
 }
 
 /* MONO MODE */

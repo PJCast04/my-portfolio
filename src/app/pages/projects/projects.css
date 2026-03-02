@@ -3,17 +3,29 @@
   flex-direction: column;
 }
 
+.projects h1 {
+  font-size: 3rem;
+  font-weight: 300;
+  line-height: 1.15;
+  letter-spacing: -1px;
+  margin-bottom: 40px;
+}
+
 .project-card {
-  border: 1px solid var(--border-color);
-  padding: 40px;
+  border: 1px solid var(--border);
+  background: rgba(255, 255, 255, 0.02);   /* softer */
+  padding: 20px;
   display: flex;
   flex-direction: column;
   gap: 20px;
-  transition: 0.3s ease;
+  transition: background 0.3s ease, transform 0.3s ease, border-color 0.3s ease;
+  border-radius: 6px;   /* subtle softness */
 }
 
 .project-card:hover {
   transform: translateY(-4px);
+  background: rgba(255, 255, 255, 0.05);
+  border-color: 1px solid var(--border);
 }
 
 .project-card h3 {
