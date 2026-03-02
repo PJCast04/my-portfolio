@@ -69,7 +69,7 @@ nav a.active::before {
 
 .copyright {
   margin: 0;
-  font-size: 0.7rem;
+  font-size: 0.6rem;
   color: var(--muted);
   align-items: center;
 }

@@ -1,1 +1,29 @@
-<p>contact works!</p>
+<section class="contact">
+  <header class="page-header">
+    <h1>Contact.</h1>
+    <p class="hint" *ngIf="copied">Copied to clipboard</p>
+  </header>
+
+  <div class="contact-list">
+    <button
+      class="contact-card"
+      type="button"
+      *ngFor="let c of contacts"
+      (click)="onCardClick(c)"
+      [attr.aria-label]="c.type === 'phone' ? 'Copy ' + c.label : 'Open ' + c.label"
+    >
+      <div class="icon">
+        <img [src]="c.iconPath" [alt]="c.label" />
+      </div>
+
+      <div class="meta">
+        <div class="label">{{ c.label }}</div>
+        <div class="value">
+          {{ c.value }}
+        </div>
+      </div>
+
+      <div class="chev" aria-hidden="true">→</div>
+    </button>
+  </div>
+</section>

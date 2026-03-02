@@ -1,10 +1,19 @@
 <div class="app-frame">
-  <div class="layout">
+  <!-- INTRO -->
+  <section class="landing" *ngIf="!introGone()" [class.hide]="introHiding()">
+    <div class="landing-inner" [class.hide]="introHiding()">
+      <h1 class="landing-title">Joash Castanos</h1>
+      <p class="landing-role">PORTFOLIO</p>
+    </div>
+  </section>
+
+  <!-- APP -->
+  <div class="layout" [class.show]="introGone()">
     <app-sidebar></app-sidebar>
 
     <main class="content">
-      <main [@fadeAnimation]="routeKey(outlet)">
-        <router-outlet #outlet="outlet"></router-outlet>
+      <main [@fadeAnimation]="routeAnimKey()">
+        <router-outlet></router-outlet>
       </main>
     </main>
   </div>

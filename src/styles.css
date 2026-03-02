@@ -14,6 +14,7 @@
   --hover: rgba(255, 255, 255, 0.8);
   --card-bg: rgba(255, 255, 255, 0.03);
   --card-hover-bg: rgba(255, 255, 255, 0.06);
+  --img: brightness(0) invert(1);
 }
 
 /* ================= BASE ================= */
@@ -54,7 +55,7 @@ h3 {
 
 /* ================= SIDEBAR ================= */
 app-sidebar {
-  width: 300px;
+  width: 350px;
   /* border-right: 1px solid var(--border); */
 }
 
@@ -86,6 +87,7 @@ app-sidebar {
   --hover: rgba(0, 0, 0, 0.85);
   --card-bg: rgba(0, 0, 0, 0.03);
   --card-hover-bg: rgba(0, 0, 0, 0.06);
+  --img: none;
 }
 
 /* MONO MODE */
@@ -122,4 +124,115 @@ app-sidebar {
     padding: 60px 24px;
     overflow: visible;
   }
+}
+
+
+/* ================= INTRO FULLSCREEN ================= */
+.landing {
+  position: fixed;
+  inset: 0;
+  height: 100vh;
+  width: 100vw;
+  background: var(--bg);
+
+  display: grid;
+  place-items: center;
+
+  z-index: 9999;
+
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+
+  /* must match INTRO_FADE_MS */
+  transition: opacity 800ms ease, visibility 0s linear 800ms;
+}
+
+.landing.hide {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.landing-inner {
+  text-align: center;
+}
+
+/* --------- STAGGERED IN (load) --------- */
+/* Start hidden for entry */
+.landing-title,
+.landing-role {
+  opacity: 0;
+  transform: translateY(12px);
+  will-change: opacity, transform;
+}
+
+/* Title enters first */
+.landing-title {
+  font-size: 4rem;
+  font-weight: 400;
+  letter-spacing: -2px;
+  margin: 0;
+
+  animation: titleIn 1000ms ease forwards;
+}
+
+/* Role enters later */
+.landing-role {
+  margin-top: 5px;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 1.5rem;
+
+  animation: roleIn 1000ms ease forwards;
+  animation-delay: 850ms; /* 👈 fade in later than title */
+}
+
+/* --------- STAGGERED OUT (exit) --------- */
+/* When intro is hiding, we transition out (not keyframes) */
+.landing-inner.hide .landing-title,
+.landing-inner.hide .landing-role {
+  transition: opacity 600ms ease, transform 600ms ease;
+  opacity: 0;
+  transform: translateY(-6px);
+}
+
+/* Role exits later than title */
+.landing-inner.hide .landing-role {
+  transition-delay: 500ms; /* 👈 your requested delay */
+  transform: translateY(-4px);
+}
+
+/* --------- KEYFRAMES --------- */
+@keyframes titleIn {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* keep role at subtle opacity */
+@keyframes roleIn {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 0.7;
+    transform: translateY(0);
+  }
+}
+
+/* ================= LAYOUT FADE IN ================= */
+/* Hide layout initially */
+.layout {
+  opacity: 0;
+  transition: opacity 1000ms ease-out;
+}
+
+.layout.show {
+  opacity: 1;
 }
