@@ -23,7 +23,7 @@ export class Projects {
     title: 'Portfolio Website',
     description: 'Minimal editorial portfolio built with Angular featuring theme and mono toggle system.',
     stack: ['Angular', 'TypeScript', 'SCSS'],
-    url: 'https://yourlink.com'
+    url: 'https://joashcastanos.vercel.app'
   }
   
 ];
