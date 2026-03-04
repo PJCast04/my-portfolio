@@ -66,6 +66,9 @@ app-sidebar {
   overflow-y: auto; /* only right side scrolls */
   scroll-behavior: smooth;
 }
+.content::-webkit-scrollbar {
+  display: none;
+}
 
 /* ================= THEMES ================= */
 

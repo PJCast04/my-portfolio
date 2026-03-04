@@ -82,21 +82,56 @@ nav a.active::before {
 }
 
 /* ================= MOBILE ================= */
+
 @media (max-width: 1024px) {
+
   .sidebar {
+    padding: 20px 24px;
+    height: auto;
+  }
+
+  .sidebar h2 {
+    font-size: 22px;
+    margin-bottom: 2px;
+  }
+
+  .position {
+    font-size: 0.75rem;
+    margin-bottom: 16px;
+  }
+
+  /* NAV becomes horizontal */
+  nav {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+
+  nav a {
+    font-size: 0.85rem;
+  }
+
+  /* remove dot indicator on mobile */
+  nav a::before {
+    display: none;
+  }
+
+  /* sidebar bottom becomes inline */
+  .sidebar-bottom {
+    position: static;
+    border-top: none;
+    padding-top: 12px;
+    margin-top: 10px;
+
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    padding: 20px;
   }
 
-  .sidebar-top nav {
-    display: none;
-    /* hide nav for now */
+  .copyright {
+    font-size: 0.6rem;
   }
 
-  .sidebar-bottom {
-    margin: 0;
-    position: static;
-  }
+  
+
 }

@@ -20,11 +20,12 @@ export class Projects {
     projects: Project[] = [
   {
     id: 1,
-    title: 'Portfolio v1',
+    title: 'Portfolio Website',
     description: 'Minimal editorial portfolio built with Angular featuring theme and mono toggle system.',
     stack: ['Angular', 'TypeScript', 'SCSS'],
     url: 'https://yourlink.com'
   }
+  
 ];
 
 openProject(url: string) {
