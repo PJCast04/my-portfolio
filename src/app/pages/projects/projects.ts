@@ -24,8 +24,15 @@ export class Projects {
     description: 'Minimal editorial portfolio built with Angular featuring theme and mono toggle system.',
     stack: ['Angular', 'TypeScript', 'SCSS'],
     url: 'https://joashcastanos.vercel.app'
+  },
+  {
+    id: 2,
+    title: 'Board Exam Tracker',
+    description: 'Review companion for board exam takers to track subjects, study sessions, and mock exam scores.',
+    stack: ['React', 'Vite', 'LocalStorage'],
+    url: 'https://board-exam-tracker-rho.vercel.app/#/home'
   }
-  
+
 ];
 
 openProject(url: string) {
