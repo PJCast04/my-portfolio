@@ -28,8 +28,8 @@ export class Projects {
   {
     id: 2,
     title: 'Board Exam Tracker',
-    description: 'Review companion for board exam takers to track subjects, study sessions, and mock exam scores.',
-    stack: ['React', 'Vite', 'LocalStorage'],
+    description: 'Board exam review companion with an AI quiz generator that turns uploaded PDF, Word, or PowerPoint reviewers into multiple-choice questions with explanations. Also tracks subjects, study sessions, and mock exam scores.',
+    stack: ['React', 'Vite', 'LangChain', 'AI'],
     url: 'https://board-exam-tracker-rho.vercel.app/#/home'
   }
 

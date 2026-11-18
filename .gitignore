@@ -42,3 +42,16 @@ __screenshots__/
 # System files
 .DS_Store
 Thumbs.db
+
+# Claude Code / AI assistant files
+.claude/
+CLAUDE.md
+CLAUDE.local.md
+.mcp.json
+
+# Environment variables and secrets
+.env
+.env.*
+!.env.example
+*.pem
+*.key
